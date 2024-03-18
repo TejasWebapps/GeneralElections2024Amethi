@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मतदान केन्द्र का विवरण जाने</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add your additional styles or external CSS links here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .filter-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Additional Styles */
+        h1 {
+            color: #333;
+        }
+
+        /* Add your background image */
+        body {
+            background-image: url('https://drive.google.com/file/d/1idtGMIO6elKTZM7pakFaug3Qx8T3gx_2/view?usp=sharing.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="filter-container">
+        <h1>मतदान केन्द्र का विवरण जाने</h1>
+        <label for="assembly">विधानसभा / सर्किल चुनें:</label>
+        <select id="assembly"></select>
+
+      <label for="zone">जोन का चुनाव करें:</label>
+        <select id="zone"></select>
+      
+      <label for="sector">सेक्टर का चुनाव करें:</label>
+        <select id="sector"></select>
+
+        <label for="boothNo">मतदान केन्द्र / बूथ संख्या चुने :</label>
+        <select id="boothNo"></select>
+
+        <button onclick="filterData()">विवरण खोजें</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+<h6>Amethi Police</h6>
+</body>
+
+</html>
