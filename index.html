@@ -1,107 +1,102 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>मतदान केन्द्र का विवरण जाने</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Add your additional styles or external CSS links here -->
-    <style>
+    <title>Login</title>
+  
+<img class="center" src="https://drive.google.com/uc?export=view&id=1idtGMIO6elKTZM7pakFaug3Qx8T3gx_2"/>
+      <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1idtGMIO6elKTZM7pakFaug3Qx8T3gx_2">
+  
+<style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
         }
-
-        .filter-container {
+        .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            width: 300px;
             text-align: center;
         }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+        h2 {
+            color: #333;
         }
-
-        select,
-        input {
-            width: 100%;
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
             padding: 10px;
-            margin-bottom: 20px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
         }
-
-        button {
+        input[type="submit"] {
             background-color: #4caf50;
-            color: #fff;
-            padding: 12px;
+            color: white;
+            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s;
         }
-
-        button:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
         }
-
-        #result {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Additional Styles */
-        h1 {
-            color: #333;
-        }
-
-        /* Add your background image */
-        body {
-            background-image: url('your-image-url.jpg');
-            background-size: cover;
-            background-position: center;
+        input[type="submit"]:focus {
+            outline: none;
         }
     </style>
 </head>
-
 <body>
-
-    <div class="filter-container">
-        <h1>मतदान केन्द्र का विवरण जाने</h1>
-        <label for="assembly">विधानसभा / सर्किल चुनें:</label>
-        <select id="assembly"></select>
-
-        <label for="sector">सेक्टर का चुनाव करें:</label>
-        <select id="ps"></select>
-
-        <label for="boothNo">मतदान केन्द्र / बूथ संख्या चुने :</label>
-        <select id="boothNo"></select>
-
-        <button onclick="filterData()">विवरण खोजें</button>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
     </div>
 
-    <div id="result"></div>
+    <script>
+        // Simple database for storing user credentials
+        const users = [
+            { username: "user1", password: "password1" },
+            { username: "upp", password: "112" },
+            // Add more users as needed
+        ];
 
-    <script src="script.js"></script>
-<h6>Amethi Police</h6>
+        // Function to check if the entered credentials are valid
+        function authenticateUser(username, password) {
+            return users.some(user => user.username === username && user.password === password);
+        }
+
+        // Event listener for form submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the entered username and password
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the entered credentials are valid
+            if (authenticateUser(username, password)) {
+                // Redirect the user to the form.html page upon successful login
+                window.location.href = "form.html";
+            } else {
+                // Display an error message if the credentials are invalid
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    </script>
 </body>
-
 </html>
